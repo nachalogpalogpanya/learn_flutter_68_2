@@ -9,50 +9,27 @@ class Item extends StatefulWidget {
 }
 
 class _ItemState extends State<Item> {
-  int quantity = 10;
-
-  void add() {
-    setState(() {
-      quantity++;
-    });
-  }
-
-  void remove() {
-    setState(() {
-      quantity = quantity > 0 ? quantity - 1 : 0;
-    });
-  }
+List data = ["สมหมาย", "สมศรี", "สมปอง", "สมจิตร", "สมพร"];
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            "จำนวนสินค้า: $quantity",
-            style: const TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
+    return ListView.builder(
+      itemCount: data.length,
+      itemBuilder: (content, index){
+        return Container(
+          decoration:BoxDecoration(
+            border: Border.all(color: Colors.pink),
+            borderRadius: BorderRadius.circular(10)
           ),
-          const SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: add,
-                child: const Text("เพิ่ม"),
-              ),
-              const SizedBox(width: 20),
-              ElevatedButton(
-                onPressed: remove,
-                child: const Text("ลด"),
-              ),
-            ],
+          margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: EdgeInsets.all(40),
+          child: Text(
+            data[index],
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
-        ],
-      ),
+        );
+
+      },
     );
   }
 }
