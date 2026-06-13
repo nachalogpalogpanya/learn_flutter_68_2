@@ -40,13 +40,18 @@
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      "อาชีพ: ${people[index].job}",
+                      "อาชีพ: ${people[index].job.title}",
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
-                Icon(Icons.person, size: 50, color: Colors.pinkAccent),
+                Image.asset(
+                  people[index].job.image,
+                  width:80,
+                  height:80,
+                  fit:BoxFit.cover
+                )
               ],
             )
             
