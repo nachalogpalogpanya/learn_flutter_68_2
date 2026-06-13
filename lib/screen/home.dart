@@ -7,52 +7,21 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     //return Row(
     return Column(
-      //mainAxisAlignment: MainAxisAlignment.start
-      //mainAxisAlignment: MainAxisAlignment.center
-      //mainAxisAlignment: MainAxisAlignment.end
-      //mainAxisAlignment: MainAxisAlignment.spaceAround
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      //mainAxisAlignment: MainAxisAlignment.start,
+      //mainAxisAlignment: MainAxisAlignment.end,
+      //mainAxisAlignment: MainAxisAlignment.spaceAround,
+      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children:[
-        Container(
-          color: Colors.redAccent,
-          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-          child: Text(
-            "Hello Flutter 5",
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 3,
-            ),
-          ),
-        ),
-        Container(
-          color: Colors.blue,
-          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-          child: Text(
-            "Hello Flutter 5",
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 3,
-            ),
-          ),
-        ),
-              Container(
-          color: Colors.green,
-          padding: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-          child: Text(
-            "Hello Flutter 5",
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 3,
-            ),
-          ),
-        ),
+        Image.asset("assets/images/flower.webp",width:200,height: 200),
+        SizedBox(height: 20,),
+        Image.network(
+          "https://hips.hearstapps.com/hmg-prod/images/pale-purple-cosmos-flower-1656258166.jpeg?crop=1.00xw:0.834xh;0,0.160xh",
+          width: 200,
+          height: 200,
+        )
+       
 
       ],
     );
